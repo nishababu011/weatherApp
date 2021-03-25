@@ -1,0 +1,14 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /weatherApp
+
+apikey:
+  limitTime: 3600
+  maxTokens: 5
+  endpoint: https://samples.openweathermap.org/data/2.5/weather
+
+spring:
+  h2:
+    console:
+      enabled: true

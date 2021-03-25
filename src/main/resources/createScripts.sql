@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS weather_stats;
+
+CREATE TABLE weather_stats (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  city VARCHAR(250) NOT NULL,
+  country VARCHAR(250) NOT NULL,
+  description VARCHAR(250) DEFAULT NULL
+);
