@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 @Slf4j
 public class WeatherService {
@@ -22,7 +24,7 @@ public class WeatherService {
     private WeatherDataRepository dataRepository;
 
     /**
-     *
+     * Service method to fetch the weather data.
      * @param apiKey
      * @param city
      * @param country
@@ -53,7 +55,7 @@ public class WeatherService {
     }
 
     /**
-     *
+     * Method to save data to database.
      * @param city
      * @param country
      * @param description

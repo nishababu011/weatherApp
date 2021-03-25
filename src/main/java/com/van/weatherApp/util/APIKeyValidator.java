@@ -48,15 +48,15 @@ public class APIKeyValidator {
         LocalDateTime currentTime = commonUtil.getCurrentDateTime();
         LocalDateTime cachedApiKeyTime = apiKeyCacheUtil.getApiKeyBasedTime(apiKey, currentTime);
         if (currentTime.equals(cachedApiKeyTime)) {
-            log.info("Limit time window started for APIKey > {}" , apiKey);
+            log.debug("Limit time window started for APIKey > {}" , apiKey);
             tokenBucketCacheUtil.resetApiKeyBasedLimit(apiKey);
         } else if (Duration.between(cachedApiKeyTime, currentTime).getSeconds() > limitTime) {
-            log.info("Limit time window resetting for APIKey > {}" , apiKey);
+            log.debug("Limit time window resetting for APIKey > {}" , apiKey);
             apiKeyCacheUtil.removeApiKeyBasedTime(apiKey);
             tokenBucketCacheUtil.resetApiKeyBasedLimit(apiKey);
             apiKeyCacheUtil.putApiKeyBasedTime(apiKey, currentTime);
         } else {
-            log.info("APIKey {} Within the Limit time window, checking for remaining tokens" , apiKey);
+            log.debug("APIKey {} Within the Limit time window, checking for remaining tokens" , apiKey);
             int currentToken = tokenBucketCacheUtil.getExistingApiKeyBasedLimit(apiKey);
             if (currentToken <= 0) {
                 throw new LimitExceededException(Constants.ERROR_LIMIT_EXCEEDED);

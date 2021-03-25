@@ -17,13 +17,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.projectlombok:lombok'
-	implementation('com.fasterxml.jackson.core:jackson-databind')
-	implementation group: 'io.github.resilience4j', name: 'resilience4j-spring-boot2', version: '1.5.0'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
 	testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
 	testImplementation 'junit:junit:4.12'
