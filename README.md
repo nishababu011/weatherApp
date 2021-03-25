@@ -5,3 +5,6 @@ The application is a spring boot REST API that exposes a endpoint with parameter
 
 ![image](https://user-images.githubusercontent.com/46775220/112449033-1a959e80-8da7-11eb-9f66-a4be05002a3f.png)
 
+![image](https://user-images.githubusercontent.com/46775220/112449120-2f723200-8da7-11eb-9b55-10f72efd9ad0.png)
+
+
